@@ -1,0 +1,45 @@
+﻿@model AracKiraSistemi.Entities.Model.Araba
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="font-family:'Century Gothic'">
+
+    <div style="text-align: center; background-color: #1C2E3E;color:white;margin:15px">
+        <h2><b> Id : @Model.ArabaId - Araba Guncelle</b></h2>
+    </div>
+</div>
+
+<div style="margin:15px">
+    @using (Html.BeginForm("Edit", "Araba", FormMethod.Post))
+    {
+        @Html.Label("Araba Id ")
+        @Html.TextBoxFor(x => x.ArabaId, new { @class = "form-control" ,@readonly ="readonly" })
+        <br />
+
+        @Html.Label("Kira Türü")
+        @Html.DropDownListFor(x => x.LeaseTypeId, (List<SelectListItem>)ViewBag.KiraTuru, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Adı")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Modeli")
+        @Html.TextBoxFor(x => x.Model, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Markası")
+        @Html.TextBoxFor(x => x.Branch, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Yılı")
+        @Html.TextBoxFor(x => x.Year, new { @class = "form-control" })
+        <br />
+        @Html.Label("Km")
+        @Html.TextBoxFor(x => x.Km, new { @class = "form-control" })
+        <br />
+        <button  type="submit" style="text-align: center; background-color: #1C2E3E; color: white;height:40px"> <b>Güncelle</b></button>
+    }
+</div>

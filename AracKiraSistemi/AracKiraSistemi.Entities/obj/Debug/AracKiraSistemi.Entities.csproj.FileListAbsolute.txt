@@ -1,0 +1,13 @@
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\bin\Debug\AracKiraSistemi.Entities.dll.config
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\bin\Debug\AracKiraSistemi.Entities.dll
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\bin\Debug\AracKiraSistemi.Entities.pdb
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\bin\Debug\EntityFramework.dll
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\bin\Debug\EntityFramework.xml
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\obj\Debug\AracKiraSistemi.Entities.csproj.AssemblyReference.cache
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\obj\Debug\AracKiraSistemi.Entities.csproj.CoreCompileInputs.cache
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\obj\Debug\AracKiraSistemi.Entities.dll
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\obj\Debug\AracKiraSistemi.Entities.pdb
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\obj\Debug\AracKiraSistemi.Entities.Migrations.DatabaseOlustur.resources
+C:\medipol\finalprojem\AracKiraSistemi\AracKiraSistemi.Entities\obj\Debug\AracKiraSistemi.Entities.csproj.GenerateResource.cache

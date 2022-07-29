@@ -1,0 +1,34 @@
+﻿@model AracKiraSistemi.Entities.Model.KiraTuru
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="font-family:'Century Gothic'">
+
+    <div style="text-align: center; background-color: #1C2E3E;color:white;margin:15px">
+        <h2><b> Id : @Model.KiraTuruId - Kira Turu Guncelle</b></h2>
+    </div>
+</div>
+
+<div style="margin:15px">
+    @using (Html.BeginForm("Edit", "KiraTuru", FormMethod.Post))
+    {
+        @Html.Label("Kira Türü Id ")
+        @Html.TextBoxFor(x => x.KiraTuruId, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+
+        @Html.Label("Günlük Kira")
+        @Html.TextBoxFor(x => x.DailyPrice, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Haftalık Kira")
+        @Html.TextBoxFor(x => x.WeeklyPrice, new { @class = "form-control" })
+        <br />
+        @Html.Label("Aylık Kira")
+        @Html.TextBoxFor(x => x.MonthlyPrice, new { @class = "form-control" })
+        <br />
+
+        <button style="text-align: center; background-color: #1C2E3E; color: white;height:40px"> <b>Güncelle</b></button>
+    }
+</div>

@@ -1,0 +1,59 @@
+﻿@model AracKiraSistemi.Entities.Model.Sepet
+
+@{ ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+<h3>Silmek istiyor musunu?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Araç Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Araba.Name)
+        </dd>
+
+        <dt>
+            Müşteri Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Musteri.FirstName)
+        </dd>
+
+        <dt>
+            Alış Tarihi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseDate)
+        </dd>
+
+        <dt>
+            Teslim Tarihi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryDate)
+        </dd>
+
+        <dt>
+            Toplam Fiyat
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Geri Git", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,43 @@
+﻿@using AracKiraSistemi.Entities.Model
+@model List<Sepet>
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+
+
+<div style="font-family:'Century Gothic'">
+    <div class="row mb-3">
+        <a href="/Sepet/Create" class="btn btn-info">Araç Kirala</a>
+    </div>
+
+    <div style="margin:15px">
+        <table class="table table-bordered">
+            <thead>
+                <tr style="text-align: center; background-color: #1C2E0E;color:white">
+                    <th style="width:7%">SepetId</th>
+                    <th>Müşteri</th>
+                    <th>Araba</th>
+                    <th>Alış Tarihi</th>
+                    <th>Teslim Tarihi</th>
+                    <th>ToplamMiktar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var ktp in Model)
+                {
+                <tr>
+                    <td>@ktp.SepetId</td>
+                    <td>@ktp.Musteri.FirstName</td>
+                    <td>@ktp.Araba.Name</td>
+                    <td>@ktp.PurchaseDate</td>
+                    <td>@ktp.DeliveryDate</td>
+                    <td>@ktp.TotalPrice</td>
+                    <td>
+                        <a class="btn btn-danger" href="/Sepet/Delete/@ktp.SepetId"> Sil </a>&nbsp;
+                        <a class="btn btn-primary" href="/Sepet/Edit/@ktp.SepetId"> Güncelle </a>&nbsp;
+                    </td>
+                </tr>
+}
+            </tbody>
+        </table>
+    </div>
+</div>

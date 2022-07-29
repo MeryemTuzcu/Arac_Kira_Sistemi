@@ -1,0 +1,38 @@
+﻿@model AracKiraSistemi.Entities.Model.Musteri
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="font-family:'Century Gothic'">
+
+    <div style="text-align: center; background-color: #1C2E3E;color:white;margin:15px">
+        <h2><b> Id : @Model.MusteriId - Müşteri Guncelle</b></h2>
+    </div>
+</div>
+
+<div style="margin:15px">
+    @using (Html.BeginForm("Edit", "Musteri", FormMethod.Post))
+    {
+        @Html.Label("Müşteri Id ")
+        @Html.TextBoxFor(x => x.MusteriId, new { @class = "form-control" ,@readonly ="readonly" })
+        <br />
+
+        @Html.Label("Adı")
+        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Soyadı")
+        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Doğum Tarihi")
+        @Html.TextBoxFor(x => x.BornDate, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Cinsiyet")
+        @Html.TextBoxFor(x => x.Gender, new { @class = "form-control" })
+        <br />
+        <button style="text-align: center; background-color: #1C2E3E; color: white;height:40px"> <b>Güncelle</b></button>
+    }
+</div>

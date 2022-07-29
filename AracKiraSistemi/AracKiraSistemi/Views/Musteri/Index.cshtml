@@ -1,0 +1,63 @@
+﻿@using AracKiraSistemi.Entities.Model
+@model List<Musteri>
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+<div class="row mb-3">
+    <a href="/Musteri/Create" class="btn btn-info">Müşteri Ekle</a>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Müşteriler</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Ad</th>
+                            <th>Soyad</th>
+                            <th>Doğum Yılı</th>
+                            <th>Cinsiyet</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.MusteriId</td>
+                            <td>@item.FirstName</td>
+                            <td>@item.LastName</td>
+                            <td>@item.BornDate.ToString("dd-MM-yyyy")</td>
+                            <td>
+                                @if (item.Gender == "Bay")
+                                {
+                        <span class="badge bg-info"><i class="fas fa-male text-white"></i></span> }
+                                        else
+                                        {
+                        <span class="badge bg-fuchsia"><i class="fas fa-female text-white"></i></span>}
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="/Musteri/Edit/@item.MusteriId" class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="/Musteri/Delete/@item.MusteriId" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>

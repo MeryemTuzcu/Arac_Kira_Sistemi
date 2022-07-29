@@ -1,0 +1,36 @@
+﻿@model AracKiraSistemi.Entities.Model.Musteri
+
+@{ ViewBag.Title = "Sil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+
+<div class="col-md-2 mb-4">
+    <a href="/Musteri/Index" class="btn btn-outline-info"><i class="fas fa-arrow-circle-left mr-2"></i>Listeye Geri Dön</a>
+</div>
+
+<h3><b>'@Model.FirstName-@Model.LastName'</b> isimli müşteriyi silmek istediğinize emin misiniz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            <b>Adı:</b> @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dd>
+            <b>Soyadı:</b> @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dd>
+            <b>Doğum Tarihi:</b> @Html.DisplayFor(model => model.BornDate)
+        </dd>
+        <dd>
+            <b>Cinsiyet:</b> @Html.DisplayFor(model => model.Gender)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="submit" class="btn btn-danger btn-block"><i class="fas fa-trash mr-2"></i>Sil</button>
+        </div>
+    }
+</div>

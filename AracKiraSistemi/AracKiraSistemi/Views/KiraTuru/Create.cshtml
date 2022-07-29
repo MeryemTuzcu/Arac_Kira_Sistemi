@@ -1,0 +1,50 @@
+﻿@model AracKiraSistemi.Entities.Model.KiraTuru
+
+@{ ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+
+<h2>Kiralama Türü Ekle</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2">Günlük Fiyat: </label>
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.DailyPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DailyPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Haftalık Fiyat: </label>
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.WeeklyPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WeeklyPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Aylık Fiyat: </label>
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MonthlyPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MonthlyPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-12">
+                <button type="submit" class="btn btn-outline-info btn-block">Ekle</button>
+            </div>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Geri Git", "Index")
+</div>

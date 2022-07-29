@@ -1,0 +1,65 @@
+﻿@using AracKiraSistemi.Entities.Model
+@model List<Araba>
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+
+<div class="row mb-3">
+    <a href="/Araba/Create" class="btn btn-info">Araç Ekle</a>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Araçlar</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>ArabaId</th>
+                            <th>Adı</th>
+                            <th>Model</th>
+                            <th>Marka</th>
+                            <th>Yıl</th>
+                            <th>Km</th>
+                            <th>Günlük Fiyat</th>
+                            <th>Haftalık Fiyat</th>
+                            <th>Aylık Fiyat</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.ArabaId</td>
+                            <td>@item.Name</td>
+                            <td>@item.Model</td>
+                            <td>@item.Branch</td>
+                            <td>@item.Year</td>
+                            <td>@item.Km</td>
+                            <td>@item.KiraTuru.DailyPrice</td>
+                            <td>@item.KiraTuru.WeeklyPrice</td>
+                            <td>@item.KiraTuru.MonthlyPrice</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="/Araba/Edit/@item.ArabaId" class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="/Araba/Delete/@item.ArabaId" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
